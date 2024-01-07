@@ -2,6 +2,7 @@ from vault import Vault
 from logger_setup import logger
 import os
 from dotenv import load_dotenv
+from selenium_functions import Selenium
 
 
 def main():
@@ -15,6 +16,8 @@ def main():
     vault = Vault(vault_token, vault_url)
     vault.authenticate_client()
     username, password = vault.get_credentials(secret_path)
+
+    selenium = Selenium()
 
 
 if __name__ == "__main__":
