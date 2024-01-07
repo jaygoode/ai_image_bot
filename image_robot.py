@@ -1,8 +1,14 @@
 import requests
 import json
+from vault import Vault
+
+
+vault_token = ""
+vault_url = ""
+vault = Vault(vault_token, vault_url)
 
 # URL where you want to send the POST request
-url = "http://127.0.0.1:8888/v1/generation/text-to-image"
+image_ai_url = "http://127.0.0.1:8888/v1/generation/text-to-image"
 prompt = ""
 # JSON payload
 data = {
@@ -63,7 +69,7 @@ json_data = json.dumps(data)
 
 headers = {"Content-Type": "application/json"}
 try:
-    response = requests.post(url, data=json.dumps(data), headers=headers)
+    response = requests.post(image_ai_url, data=json.dumps(data), headers=headers)
     if response.status_code == 200:
         print("Request successful.")
         print("Response:", response.json())
