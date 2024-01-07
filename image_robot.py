@@ -1,16 +1,11 @@
 import requests
 import json
-from vault import Vault
-
-
-vault_token = ""
-vault_url = ""
-vault = Vault(vault_token, vault_url)
+from logger_setup import logger
 
 # URL where you want to send the POST request
 image_ai_url = "http://127.0.0.1:8888/v1/generation/text-to-image"
 prompt = ""
-# JSON payload
+
 data = {
     "prompt": {prompt},
     "negative_prompt": "",
@@ -71,9 +66,9 @@ headers = {"Content-Type": "application/json"}
 try:
     response = requests.post(image_ai_url, data=json.dumps(data), headers=headers)
     if response.status_code == 200:
-        print("Request successful.")
-        print("Response:", response.json())
+        logger.info("Request successful.")
+        logger.info("Response:", response.json())
     else:
-        print("Request failed with status code:", response.status_code)
+        logger.error("Request failed with status code:", response.status_code)
 except Exception as e:
-    print("An error occurred:", str(e))
+    logger.error("An error occurred:", str(e))
