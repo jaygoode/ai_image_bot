@@ -17,7 +17,9 @@ def main():
     vault.authenticate_client()
     username, password = vault.get_credentials(secret_path)
 
-    selenium = Selenium()
+    instagram = Selenium()
+    instagram.open_instagram()
+    instagram.login(username, password)
 
 
 if __name__ == "__main__":
