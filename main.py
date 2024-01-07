@@ -9,8 +9,8 @@ def main():
     vault_token = os.environ.get("VAULT_TOKEN")
     vault_url = os.environ.get("VAULT_URL")
     secret_path = os.environ.get("SECRET_PATH")
-    username = os.environ.get("USERNAME")
-    password = os.environ.get("PASSWORD")
+    # username = os.environ.get("USERNAME")
+    # password = os.environ.get("PASSWORD")
 
     vault = Vault(vault_token, vault_url)
     vault.authenticate_client()
