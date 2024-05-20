@@ -17,9 +17,11 @@ def main():
     # vault = Vault(vault_token, vault_url)
     # vault.authenticate_client()
     # username, password = vault.get_credentials(secret_path)
+    insta_username = os.environ.get("INSTA_USERNAME")
+    insta_password = os.environ.get("INSTA_PASSWORD")
     archive_fp = ""
 
-    instagram = Selenium_Handler()
+    instagram = Selenium_Handler(logger, insta_username, insta_password)
     file_handler = FileHandler("")
     instagram.open_instagram()
     instagram.login(username, password)
