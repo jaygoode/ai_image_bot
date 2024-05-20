@@ -1,6 +1,6 @@
 from gradio_client import Client
 
-client = Client("http://127.0.0.1:7865/")
+client = Client("127.0.0.1:7865")
 result = client.predict(
     False,  # bool in 'Disable Preview' Checkbox component
     0.1,  # int | float (numeric value between 0.1 and 3.0)
