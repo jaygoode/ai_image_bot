@@ -22,7 +22,7 @@ class Selenium_Handler:
         # Initialize ChromeOptions and set binary location
         self.options = Options()
         self.options.binary_location = self.chrome_binary_path
-
+        self.options.add_argument("--start-maximized")
         try:
             self.chrome_service = Service(self.chrome_driver_path)
             self.driver = webdriver.Chrome(
@@ -43,38 +43,67 @@ class Selenium_Handler:
         if self.is_element(decline_xpath):
             self.click_element(decline_xpath)
         home_nav_xpath = "//span[contains(text(), 'Home')]"
-        if not self.is_element(home_nav_xpath):
-            self.login()
+        # self.login()
+        # if not self.is_element(home_nav_xpath):
         self.click_element(home_nav_xpath)
 
     def create_post(self, image_path):
-        create_nav_xpath = "//span[contains(text(), 'Create')]"
-        post_nav_xpath = "//span[contains(text(), 'Post')]"
-        create_button = self.driver.find_elements(By.XPATH, create_nav_xpath)
-        post_button = self.driver.find_elements(By.XPATH, post_nav_xpath)
-        create_button.click()
-        post_button.click()
-        select_xpath = "//span[contains(text(), 'Select from computer')]"
-        select_button = self.driver.find_elements(By.XPATH, select_xpath)
-        select_button.click()
-        file_input = self.driver.find_element(By.XPATH, '//input[@type="file"]')
-        file_input.send_keys(image_path)
+        for _ in range(5):
+            try:
+                create_nav_xpath = "//span[contains(text(), 'Create')]"
+                post_nav_xpath = "//span[contains(text(), 'Post')]"
+                self.click_element(create_nav_xpath)
+                self.click_element(post_nav_xpath)
+                file_input = self.driver.find_element(By.XPATH, '//input[@type="file"]')
+                file_input.send_keys(image_path)
+                breakpoint()
+                break
+            except Exception as e:
+                self.logger.error("Failed to create post, retrying..")
+
+    def close_element(self, xpath, timeout=15):
+        count = 0
+        while self.is_element(xpath):
+            count + 1
+            try:
+                element = self.driver.find_element(By.XPATH, xpath)
+                self.driver.execute_script("arguments[0].click();", element)
+                continue
+            except Exception as e:
+                self.logger.info(
+                    f"js click xpath failed, trying python next: {xpath}" + str(e)
+                )
+                try:
+                    self.logger.info(f"clicking cpath:{xpath}")
+                    print(f"clicking cpath:{xpath}")
+                    WebDriverWait(self.driver, timeout).until(
+                        EC.presence_of_element_located((By.XPATH, xpath))
+                    ).click
+                    continue
+                except:
+                    self.logger.error(f"couldn't click xpath: {xpath}" + str(e))
+            if count > 4:
+                break
 
     def click_element(self, xpath, timeout=15):
-        try:
-            element = self.driver.find_element(By.XPATH, xpath)
-            self.driver.execute_script("arguments[0].click();", element)
-            breakpoint()
-        except Exception as e:
-            self.logger(f"js click xpath failed, trying python next: {xpath}" + str(e))
+        for _ in range(5):
             try:
-                self.logger.info(f"clicking cpath:{xpath}")
-                print(f"clicking cpath:{xpath}")
-                WebDriverWait(self.driver, timeout).until(
-                    EC.presence_of_element_located((By.XPATH, xpath))
-                ).click
-            except:
-                self.logger(f"couldn't click xpath: {xpath}" + str(e))
+                element = self.driver.find_element(By.XPATH, xpath)
+                self.driver.execute_script("arguments[0].click();", element)
+                break
+            except Exception as e:
+                self.logger.info(
+                    f"js click xpath failed, trying python next: {xpath}" + str(e)
+                )
+                try:
+                    self.logger.info(f"clicking cpath:{xpath}")
+                    print(f"clicking cpath:{xpath}")
+                    WebDriverWait(self.driver, timeout).until(
+                        EC.presence_of_element_located((By.XPATH, xpath))
+                    ).click
+                    break
+                except:
+                    self.logger.error(f"couldn't click xpath: {xpath}" + str(e))
 
     def is_element(self, xpath, timeout=15):
         try:
@@ -86,26 +115,27 @@ class Selenium_Handler:
             self.logger.error(f"error. {e}")
             return False
 
-    def send_keys(self, xpath, input, timeout=15):
+    def send_keys(self, xpath, input, timeout=20):
         try:
-            WebDriverWait(self.driver, timeout).until(
+            element = WebDriverWait(self.driver, timeout).until(
                 EC.presence_of_element_located((By.XPATH, xpath))
-            ).send_keys(input)
+            )
+            element.send_keys(input)
             return True
         except Exception as e:
             self.logger.error(f"failed input. {e}")
             return False
 
     def login(self, username=None, password=None):
-        breakpoint()
         username_input = "//input[@name='username']"
         password_input = "//input[@name='password']"
         login_btn = "//div[contains(text(), 'Log in')]"
         continue_as_xpath = "//span[contains(text(), 'Continue as ')]/parent::button"
-        if self.is_element(continue_as_xpath):
-            self.click_element(continue_as_xpath)
-            return
-
+        notifications_no_btn = "//button[contains(text(), 'Not Now')]"
+        # if self.is_element(continue_as_xpath):
+        #     self.click_element(continue_as_xpath)
+        #     return
         self.send_keys(username_input, self.username)
         self.send_keys(password_input, self.password)
         self.click_element(login_btn)
+        self.click_element(notifications_no_btn)
