@@ -1,15 +1,24 @@
 from ollama import chat
 
-message = "hello"
-messages = [
-    {
-        "role": "system",
-        "content": message,
-    },
-]
 
-for part in chat("dolphin-mixtral", messages=messages, stream=True):
-    print(part["message"]["content"], end="", flush=True)
+class AiHandler:
+    def __init__(self):
+        pass
 
-# end with a newline
-print()
+    def chat(self, message):
+        messages = [
+            {
+                "role": "user",
+                "content": message,
+            },
+        ]
+
+        for part in chat("dolphin-mixtral", messages=messages, stream=True):
+            print(part["message"]["content"], end="", flush=True)
+
+        # end with a newline
+        print()
+
+
+ai = AiHandler()
+ai.chat("hello")
