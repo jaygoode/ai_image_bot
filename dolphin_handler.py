@@ -21,6 +21,7 @@ class AiHandler:
         print()
 
     def ask_about_image(self, question, image_file):
+        # TODO this does not yet work
         image_fp = os.path.join(self.image_folder, image_file)
         with open(image_fp, "rb") as file:
             message = [{"role": "user", "content": {question}, "image": [file.read()]}]

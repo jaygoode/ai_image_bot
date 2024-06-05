@@ -5,9 +5,25 @@ from dotenv import load_dotenv
 from selenium_handler import Selenium_Handler
 from file_handler import FileHandler
 from datetime import datetime as dt
+import argparse
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="bot for generating, analyzing and posting images with captions and hashtags to instagram"
+    )
+    parser.add_argument(
+        "-g", type=str, help="Generate images from list of strings in json doc"
+    )
+    parser.add_argument("-p", type=str, help="Post images from folder to instagram")
+    parser.add_argument(
+        "-a",
+        type=str,
+        help="Analyze images from folder and get a text back with description",
+    )
+
+    args = parser.parse_args()
+
     load_dotenv()
     vault_token = os.environ.get("VAULT_TOKEN")
     vault_url = os.environ.get("VAULT_URL")
@@ -24,8 +40,9 @@ def main():
     date = dt.today().strftime("%Y-%m-%d")
     date = "2024-05-15"
     image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\{date}"
-    instagram = Selenium_Handler(logger, insta_username, insta_password)
     file_handler = FileHandler(image_folder)
+
+    instagram = Selenium_Handler(logger, insta_username, insta_password)
     instagram.open_instagram()
     instagram.login(username, password)
 
