@@ -6,6 +6,7 @@ import os
 class AiHandler:
     def __init__(self, image_folder):
         self.image_folder = image_folder
+        # self.ollama_client = ollama.OllamaClient()
 
     def chat(self, message):
         messages = [
@@ -23,9 +24,20 @@ class AiHandler:
     def ask_about_image(self, question, image_file):
         # TODO this does not yet work
         image_fp = os.path.join(self.image_folder, image_file)
-        with open(image_fp, "rb") as file:
-            message = [{"role": "user", "content": {question}, "image": [file.read()]}]
-            response = ollama.chat(model="llava", messages=message)
+        message = {
+            "role": "user",
+            "content": question,
+            "images": [image_fp],
+        }
+
+        # Use the ollama.chat function to send the image and retrieve the description
+        response = ollama.chat(
+            model="llava",  # Specify the desired LLaVA model size
+            messages=[message],
+        )
+
+        # Print the model's description of the image
+        breakpoint()
         print(response["message"]["content"])
 
 

@@ -11,5 +11,4 @@ class FileHandler:
         return image_files
 
     def move_file(self, file):
-        breakpoint()
         os.rename(file, self.archive_image_folder + "\\" + file)
