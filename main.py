@@ -42,13 +42,14 @@ def main():
     image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\{date}"
     file_handler = FileHandler(image_folder)
 
-    instagram = Selenium_Handler(logger, insta_username, insta_password)
-    instagram.open_instagram()
-    instagram.login(username, password)
+    if args.p:
+        instagram = Selenium_Handler(logger, insta_username, insta_password)
+        instagram.open_instagram()
+        instagram.login(username, password)
 
-    for image in file_handler.get_files():
-        instagram.create_post(image_folder + "\\" + image)
-        file_handler.move_files(image_folder + "\\" + image)
+        for image in file_handler.get_files():
+            instagram.create_post(image_folder + "\\" + image)
+            file_handler.move_files(image_folder + "\\" + image)
 
 
 if __name__ == "__main__":
