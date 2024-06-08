@@ -1,12 +1,17 @@
 from ollama import chat
 import ollama
 import os
-
+import subprocess
 
 class AiHandler:
     def __init__(self, image_folder):
         self.image_folder = image_folder
-        # self.ollama_client = ollama.OllamaClient()
+
+    def start_model(self, model_name):
+        results = subprocess.run(f"ollama run {model_name}", capture_output=True, text=True)
+        print(f"Return code: {results.returncode}")
+        print(f"Return code: {results.stdout}")
+        print(f"Return code: {results.stderr}")
 
     def chat(self, message:str) => str:
         messages = [
