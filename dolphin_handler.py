@@ -18,10 +18,9 @@ class AiHandler:
             stderr=subprocess.PIPE,
             shell=True,
         )
-        breakpoint()
-        process.terminate()
         # Wait for the process to fully terminate
-        stdout, stderr = process.communicate()
+        process.terminate()
+        stdout, stderr = process.communicate(timeout=5)
         print(f"Return code: {process.returncode}")
         print(f"Return code: {stdout}")
         print(f"Return code: {stderr}")

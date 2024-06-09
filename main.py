@@ -61,7 +61,7 @@ def main():
             ai_handler.chat("hello")
 
     if args.a:
-        if int(ai_handler.start_model("llava:latest")) == 0:
+        if ai_handler.start_model("llava:latest"):
             question = "what do you see in this image?"
             image = "test.png"
             breakpoint()
