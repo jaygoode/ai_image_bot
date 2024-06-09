@@ -66,10 +66,10 @@ def main():
             answer = ai_handler.chat(message)
 
     if args.a:
-        # with flag -a you can have the llava model inspect images.
+        # with flag -a you can have the llava model inspect images. ability of the model is underwhelming, seemingly useless for now.
         if ai_handler.start_model("llava:latest"):
-            question = "what do you see in this image?"
-            image = "test.png"
+            question = "this image is AI generated, does the character have 5 fingers on each hand?"
+            image = "test_image.png"
             answer = ai_handler.ask_about_image(question, image_folder + image)
 
     if args.p:
