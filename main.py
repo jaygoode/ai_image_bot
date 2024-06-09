@@ -54,20 +54,26 @@ def main():
     file_handler = FileHandler(image_folder)
     ai_handler = AiHandler(image_folder)
 
+    if args.g:
+        # if flag -g is added run code to generate images with Fooocus AI through API
+        pass
+
     if args.c:
+        # with flag -c you can chat with an LLM, currently set to dolpin-mixtral uncensored.
         if ai_handler.start_model("dolphin-mixtral:latest"):
             image = "test.png"
-            question = "what do you see in this image?"
-            ai_handler.chat("hello")
+            message = "what do you see in this image?"
+            answer = ai_handler.chat(message)
 
     if args.a:
+        # with flag -a you can have the llava model inspect images.
         if ai_handler.start_model("llava:latest"):
             question = "what do you see in this image?"
             image = "test.png"
-            breakpoint()
-            ai_handler.ask_about_image(question, image_folder + image)
+            answer = ai_handler.ask_about_image(question, image_folder + image)
 
     if args.p:
+        # flag -p is for running the selenium part to upload images from a specific folder to instagram.
         instagram = Selenium_Handler(logger, insta_username, insta_password)
         instagram.open_instagram()
         instagram.login(username, password)
