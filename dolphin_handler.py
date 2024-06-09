@@ -26,6 +26,8 @@ class AiHandler:
             logger.info(f"Return code: {process.returncode}")
             logger.info(f"Return code: {stdout}")
             logger.info(f"Return code: {stderr}")
+            if process.returncode:
+                pass
             return process.returncode
         except Exception as e:
             logger.error(f"An error occurred: {e}")
