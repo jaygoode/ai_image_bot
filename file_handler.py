@@ -28,7 +28,8 @@ class FileHandler:
 
     def read_yaml_file(self, filepath):
         try:
-            with open("data.yaml", "r") as yaml_file:
+            with open(filepath, "r") as yaml_file:
+                logger.info(yaml.safe_load(yaml_file))
                 return yaml.safe_load(yaml_file)
         except Exception as e:
             logger.error(f"Failed to open yaml file. {e}")

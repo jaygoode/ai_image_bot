@@ -52,7 +52,11 @@ def main():
     date = "2024-05-15"
     image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\{date}"
     image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\2024-05-15\\"
+    state_file_filepath = "./state.yaml"
     file_handler = FileHandler(image_folder)
+    file_handler.create_ai_state_file(state_file_filepath)
+    file_handler.read_yaml_file(state_file_filepath)
+    breakpoint()
     ai_handler = AiHandler(image_folder)
     try:
         if args.g:
