@@ -12,11 +12,20 @@ class AiHandler:
         # results = subprocess.run(
         #     f"ollama run {model_name}", capture_output=True, text=True
         # )
-        results = subprocess.run(f"ollama run {model_name}", shell=True)
-        print(f"Return code: {results.returncode}")
-        print(f"Return code: {results.stdout}")
-        print(f"Return code: {results.stderr}")
-        return results.returncode
+        process = subprocess.Popen(
+            f"ollama run {model_name}",
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            shell=True,
+        )
+        breakpoint()
+        process.terminate()
+        # Wait for the process to fully terminate
+        stdout, stderr = process.communicate()
+        print(f"Return code: {process.returncode}")
+        print(f"Return code: {stdout}")
+        print(f"Return code: {stderr}")
+        return process.returncode
 
     def chat(self, message: str) -> str:
         messages = [
@@ -52,12 +61,11 @@ class AiHandler:
         return response["message"]["content"]
 
 
-image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\2024-05-15"
-ai_handler = AiHandler(image_folder)
-breakpoint()
-if ai_handler.start_model("dolphin-mixtral:latest"):
-    image = "test.png"
-    question = "what do you see in this image?"
-    ai_handler.chat("hello")
+# image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\2024-05-15"
+# ai_handler = AiHandler(image_folder)
+# if ai_handler.start_model("dolphin-mixtral:latest"):
+#     image = "test.png"
+#     question = "what do you see in this image?"
+#     ai_handler.chat("hello")
 
-ai_handler.ask_about_image(question, image)
+# ai_handler.ask_about_image(question, image)
