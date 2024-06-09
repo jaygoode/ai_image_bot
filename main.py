@@ -6,6 +6,7 @@ from selenium_handler import Selenium_Handler
 from file_handler import FileHandler
 from datetime import datetime as dt
 import argparse
+from dolphin_handler import AiHandler
 
 
 def main():
@@ -41,6 +42,18 @@ def main():
     date = "2024-05-15"
     image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\{date}"
     file_handler = FileHandler(image_folder)
+
+    if args.g:
+        image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\2024-05-15"
+        ai_handler = AiHandler(image_folder)
+        breakpoint()
+        if ai_handler.start_model("dolphin-mixtral:latest"):
+            image = "test.png"
+            question = "what do you see in this image?"
+            ai_handler.chat("hello")
+
+    if args.a:
+        ai_handler.ask_about_image(question, image)
 
     if args.p:
         instagram = Selenium_Handler(logger, insta_username, insta_password)
