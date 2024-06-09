@@ -2,6 +2,7 @@ from ollama import chat
 import ollama
 import os
 import subprocess
+from logger_setup import logger
 
 
 class AiHandler:
@@ -9,22 +10,27 @@ class AiHandler:
         self.image_folder = image_folder
 
     def start_model(self, model_name):
-        # results = subprocess.run(
-        #     f"ollama run {model_name}", capture_output=True, text=True
-        # )
-        process = subprocess.Popen(
-            f"ollama run {model_name}",
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            shell=True,
-        )
-        # Wait for the process to fully terminate
-        process.terminate()
-        stdout, stderr = process.communicate(timeout=5)
-        print(f"Return code: {process.returncode}")
-        print(f"Return code: {stdout}")
-        print(f"Return code: {stderr}")
-        return process.returncode
+        try:
+            # results = subprocess.run(
+            #     f"ollama run {model_name}", capture_output=True, text=True
+            # )
+            process = subprocess.Popen(
+                f"ollama run {model_name}",
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                shell=True,
+            )
+            # Wait for the process to fully terminate
+            process.terminate()
+            stdout, stderr = process.communicate(timeout=5)
+            logger.info(f"Return code: {process.returncode}")
+            logger.info(f"Return code: {stdout}")
+            logger.info(f"Return code: {stderr}")
+            return process.returncode
+        except Exception as e:
+            logger.error(f"An error occurred: {e}")
+            # Kill the program immediately
+            os._exit(1)
 
     def chat(self, message: str) -> str:
         messages = [
@@ -35,10 +41,9 @@ class AiHandler:
         ]
         response = ""
         for part in chat(model="dolphin-mixtral", messages=messages, stream=True):
-            print(part["message"]["content"], end="", flush=True)
+            logger.info(part["message"]["content"], end="", flush=True)
             response += part["message"]["content"]
         return response
-        print()
 
     def ask_about_image(self, question: str, image_file: str) -> str:
         # TODO this does not yet work
@@ -56,15 +61,5 @@ class AiHandler:
         )
 
         # Print the model's description of the image
-        print(response["message"]["content"])
+        logger.info(response["message"]["content"])
         return response["message"]["content"]
-
-
-# image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\2024-05-15"
-# ai_handler = AiHandler(image_folder)
-# if ai_handler.start_model("dolphin-mixtral:latest"):
-#     image = "test.png"
-#     question = "what do you see in this image?"
-#     ai_handler.chat("hello")
-
-# ai_handler.ask_about_image(question, image)
