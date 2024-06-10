@@ -52,11 +52,12 @@ def main():
     date = "2024-05-15"
     image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\{date}"
     image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\2024-05-15\\"
-    state_file_filepath = "./state.yaml"
+    state_file_filepath = "./state_file.yaml"
+
     file_handler = FileHandler(image_folder)
     file_handler.create_ai_state_file(state_file_filepath)
     file_handler.read_yaml_file(state_file_filepath)
-    breakpoint()
+
     ai_handler = AiHandler(image_folder)
     try:
         if args.g:
@@ -73,9 +74,18 @@ def main():
         if args.a:
             # with flag -a you can have the llava model inspect images. ability of the model is underwhelming, seemingly useless for now.
             if ai_handler.start_model("llava:latest"):
-                question = "this image is AI generated, does the character have 5 fingers on each hand?"
+                questions = [
+                    "generate 10 descriptive words from this image, put them as strings in a python list, all strings starting with a hashtag",
+                    "generate a motivating caption based on this image.",
+                ]
                 image = "test_image.png"
-                answer = ai_handler.ask_about_image(question, image_folder + image)
+                answers = []
+                for question in questions:
+                    answers.append(
+                        ai_handler.ask_about_image(question, image_folder + image)
+                    )
+                logger.info(answers)
+                return answers
 
         if args.p:
             # flag -p is for running the selenium part to upload images from a specific folder to instagram.
