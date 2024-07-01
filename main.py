@@ -8,6 +8,7 @@ from datetime import datetime as dt
 import argparse
 from dolphin_handler import AiHandler
 import sys
+from image_bot.fooocus_api import generate_image
 
 
 def main():
@@ -15,7 +16,10 @@ def main():
         description="bot for generating, analyzing and posting images with captions and hashtags to instagram"
     )
     parser.add_argument(
-        "-g", type=str, help="Generate images from list of strings in json doc"
+        "-g",
+        type=str,
+        help="Generate images from list of strings in json doc",
+        action="store_true",
     )
     parser.add_argument(
         "-c",
@@ -50,9 +54,9 @@ def main():
     archive_fp = ""
     date = dt.today().strftime("%Y-%m-%d")
     date = "2024-05-15"
-    image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\{date}"
-    image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\Fooocus-API\\outputs\\files\\2024-05-15\\"
-    state_file_filepath = "./state_file.yaml"
+    image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\outputs\\files\\{date}"
+    image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\outputs\\files\\2024-05-15\\"
+    state_file_filepath = "./state.yaml"
 
     file_handler = FileHandler(image_folder)
     file_handler.create_ai_state_file(state_file_filepath)
@@ -62,7 +66,10 @@ def main():
     try:
         if args.g:
             # if flag -g is added run code to generate images with Fooocus AI through API
-            pass
+            prompts_file = "./prompts_list.yaml"
+            prompts = file_handler.read_yaml_file(prompts_file)
+            for prompt in prompts:
+                generate_image.generate(prompt)
 
         if args.c:
             # with flag -c you can chat with an LLM, currently set to dolpin-mixtral uncensored.
@@ -80,6 +87,7 @@ def main():
                 ]
                 image = "test_image.png"
                 answers = []
+                breakpoint()
                 for question in questions:
                     answers.append(
                         ai_handler.ask_about_image(question, image_folder + image)

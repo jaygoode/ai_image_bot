@@ -3,6 +3,7 @@ import ollama
 import os
 import subprocess
 from logger_setup import logger
+from time import sleep
 
 
 class AiHandler:
@@ -10,10 +11,10 @@ class AiHandler:
         self.image_folder = image_folder
 
     def start_model(self, model_name):
+        # TODO FIX
+        return True
         try:
-            # results = subprocess.run(
-            #     f"ollama run {model_name}", capture_output=True, text=True
-            # )
+            # results = subprocess.run(f"ollama run {model_name}", shell=True)
             process = subprocess.Popen(
                 f"ollama run {model_name}",
                 stdout=subprocess.PIPE,
@@ -21,8 +22,11 @@ class AiHandler:
                 shell=True,
             )
             # Wait for the process to fully terminate
+            sleep(5)
+            breakpoint()
+            process.stdin.write(b"/bye\n")
             process.terminate()
-            stdout, stderr = process.communicate(timeout=5)
+            stdout, stderr = process.communicate(timeout=15)
             logger.info(f"Return code: {process.returncode}")
             logger.info(f"Return code: {stdout}")
             logger.info(f"Return code: {stderr}")

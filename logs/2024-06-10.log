@@ -1,0 +1,40 @@
+2024-06-10 19:08:43,405 - my_logger - ERROR - Failed to open yaml file. [Errno 2] No such file or directory: './state_file.yaml'
+2024-06-10 19:08:43,412 - my_logger - INFO - Return code: 1
+2024-06-10 19:08:43,412 - my_logger - INFO - Return code: b''
+2024-06-10 19:08:43,412 - my_logger - INFO - Return code: b''
+2024-06-10 19:09:17,173 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:09:17,175 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:09:17,182 - my_logger - INFO - Return code: 1
+2024-06-10 19:09:17,182 - my_logger - INFO - Return code: b''
+2024-06-10 19:09:17,184 - my_logger - INFO - Return code: b''
+2024-06-10 19:09:49,271 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:09:49,272 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:09:49,278 - my_logger - INFO - Return code: 1
+2024-06-10 19:09:49,278 - my_logger - INFO - Return code: b''
+2024-06-10 19:09:49,279 - my_logger - INFO - Return code: b''
+2024-06-10 19:10:37,971 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:10:37,972 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:10:37,978 - my_logger - INFO - Return code: 1
+2024-06-10 19:10:37,978 - my_logger - INFO - Return code: b''
+2024-06-10 19:10:37,978 - my_logger - INFO - Return code: b''
+2024-06-10 19:11:37,209 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:11:37,210 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:12:55,691 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:12:55,692 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:13:23,524 - my_logger - ERROR - An error occurred: 
+2024-06-10 19:14:11,893 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:14:11,894 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:16:00,045 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:16:00,046 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:16:32,616 - my_logger - ERROR - An error occurred: 
+2024-06-10 19:16:58,109 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:16:58,110 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:18:02,325 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:18:02,326 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:18:42,442 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:18:42,443 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:21:13,312 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:21:13,313 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:29:38,683 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-06-10 19:29:38,684 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-06-10 19:29:43,689 - my_logger - ERROR - An error occurred: 'NoneType' object has no attribute 'write'
