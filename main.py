@@ -93,7 +93,11 @@ def main():
                         ai_handler.ask_about_image(question, image_folder + image)
                     )
                 logger.info(answers)
-                return answers
+                filepath = "./hashtags.yaml"
+                file_handler.add_to_yaml_file(filepath, answers)
+                logger.info(
+                    "successfully generated hashtags and added them to hashtags.yaml"
+                )
 
         if args.p:
             # flag -p is for running the selenium part to upload images from a specific folder to instagram.
