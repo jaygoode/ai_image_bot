@@ -83,14 +83,14 @@ def main():
             # with flag -a you can have the llava model inspect images. ability of the model is underwhelming, seemingly useless for now.
             if ai_handler.start_model("llava:latest"):
                 questions = [
-                    "generate 10 descriptive words from this image, put them as strings in a python list, all strings starting with a hashtag",
-                    "generate a motivating caption based on this image.",
+                    "generate 10 descriptive words from this image, all words should start with a hashtag. ",
                 ]
+                # "generate a motivating caption based on this image.",
                 image = image_folder + "test_image.png"
                 answers = []
                 for question in questions:
                     answer = ai_handler.ask_about_image(question, image)
-                    answers.append(answer)
+                    answers.append(answer.split(" "))
                 logger.info(answers)
                 filepath = "./hashtags.yaml"
                 file_handler.add_to_yaml_file(filepath, answers)

@@ -115,3 +115,102 @@ hashtag_list = [
 2024-07-08 22:08:34,474 - my_logger - INFO -  "Embark on your quest with courage and wisdom, just like the character in this image. Embrace challenges, gather strength from your allies, and remember that the journey is as important as the destination." 
 2024-07-08 22:08:34,474 - my_logger - INFO - [' ```python\n\nhashtag_list = [\n    "#FantasyArt",\n    "#MovieMagic",\n    "#CinematicMasterpiece",\n    "#ActorPortrayal",\n    "#EpicAdventure",\n    "#KingdomOfTheNetherlands",\n    "#HeroInCrisis",\n    "#WarriorChief",\n    "#HistoricalSetting",\n    "#FilmArt",\n    "#VikingAge",\n    "#CinematicEpic",\n    "#SetPiece",\n    "#StudioQuality",\n    "#MovieMasterpiece",\n    "#KingdomOfTheNorth"\n]\n``` ', ' "Embark on your quest with courage and wisdom, just like the character in this image. Embrace challenges, gather strength from your allies, and remember that the journey is as important as the destination." ']
 2024-07-08 22:08:34,475 - my_logger - ERROR - Failed to open yaml file. [Errno 2] No such file or directory: './hashtags.yaml'
+2024-07-08 22:14:32,870 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:14:32,871 - my_logger - INFO - None
+2024-07-08 22:14:32,878 - my_logger - INFO - Return code: 1
+2024-07-08 22:14:32,879 - my_logger - INFO - stdout: b''
+2024-07-08 22:14:32,879 - my_logger - INFO - stderr: b''
+2024-07-08 22:14:38,330 - my_logger - INFO -  ```python
+
+hashtag_list = [
+    "#fantasy",
+    "#movie",
+    "#actor",
+    "#swordsman",
+    "#costume",
+    "#setdesign",
+    "#props",
+    "#theatricalrelease",
+    "#cinema",
+    "#perioddrama",
+    "#historical",
+    "#character",
+    "#filmstill",
+    "#hero",
+    "#epic",
+    "#adventure",
+    "#movieposter"
+]
+``` 
+2024-07-08 22:14:38,898 - my_logger - INFO -  "Embrace the power within you and conquer your destiny." 
+2024-07-08 22:14:38,898 - my_logger - INFO - [' ```python\n\nhashtag_list = [\n    "#fantasy",\n    "#movie",\n    "#actor",\n    "#swordsman",\n    "#costume",\n    "#setdesign",\n    "#props",\n    "#theatricalrelease",\n    "#cinema",\n    "#perioddrama",\n    "#historical",\n    "#character",\n    "#filmstill",\n    "#hero",\n    "#epic",\n    "#adventure",\n    "#movieposter"\n]\n``` ', ' "Embrace the power within you and conquer your destiny." ']
+2024-07-08 22:14:38,900 - my_logger - INFO - existing data: None
+2024-07-08 22:14:38,900 - my_logger - ERROR - Failed to add data to yaml file. dictionary update sequence element #0 has length 324; 2 is required
+2024-07-08 22:14:38,900 - my_logger - INFO - successfully generated hashtags and added them to hashtags.yaml
+2024-07-08 22:15:10,760 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:15:10,761 - my_logger - INFO - None
+2024-07-08 22:15:10,768 - my_logger - INFO - Return code: 1
+2024-07-08 22:15:10,769 - my_logger - INFO - stdout: b''
+2024-07-08 22:15:10,769 - my_logger - INFO - stderr: b''
+2024-07-08 22:15:12,501 - my_logger - INFO -  ```python
+[  "#FantasyArt",  "#MovieMagic",  "#GameOfThrones",  "#CinematicArtwork",  "#MedievalAesthetic",  "#TheatricalPoster",  "#KingdomOfSwords",  "#HistoricalDrama",  "#EpicAdventure",  "#ActionGenre",  "#Craftsmanship" ]
+``` 
+2024-07-08 22:15:13,440 - my_logger - INFO -  "Embrace your destiny, for it is written in the stars and echoed through the ages. Let courage be your compass, wisdom your guide, and strength your foundation. May you find the treasure of a heart full of love and courage." 
+2024-07-08 22:15:13,441 - my_logger - INFO - [' ```python\n[  "#FantasyArt",  "#MovieMagic",  "#GameOfThrones",  "#CinematicArtwork",  "#MedievalAesthetic",  "#TheatricalPoster",  "#KingdomOfSwords",  "#HistoricalDrama",  "#EpicAdventure",  "#ActionGenre",  "#Craftsmanship" ]\n``` ', ' "Embrace your destiny, for it is written in the stars and echoed through the ages. Let courage be your compass, wisdom your guide, and strength your foundation. May you find the treasure of a heart full of love and courage." ']
+2024-07-08 22:15:13,442 - my_logger - INFO - existing data: None
+2024-07-08 22:15:13,442 - my_logger - ERROR - Failed to add data to yaml file. dictionary update sequence element #0 has length 233; 2 is required
+2024-07-08 22:15:13,442 - my_logger - INFO - successfully generated hashtags and added them to hashtags.yaml
+2024-07-08 22:15:25,146 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:15:25,147 - my_logger - INFO - None
+2024-07-08 22:15:25,155 - my_logger - INFO - Return code: 1
+2024-07-08 22:15:25,155 - my_logger - INFO - stdout: b''
+2024-07-08 22:15:25,156 - my_logger - INFO - stderr: b''
+2024-07-08 22:15:26,959 - my_logger - INFO -  ```python
+
+# Descriptive words for the image
+descriptors = [
+    "#medieval",
+    "#dungeonsandragons",
+    "#fantasy",
+    "#adventure",
+    "#elf",
+    "#treasure",
+    "#gold",
+    "#coin",
+    "#skulls",
+    "#elf costume",
+    "#trophy room"
+]
+``` 
+2024-07-08 22:15:27,596 - my_logger - INFO -  "Embrace your inner warrior and conquer the challenges that lie ahead with courage, strength, and wisdom." 
+2024-07-08 22:15:27,597 - my_logger - INFO - [' ```python\n\n# Descriptive words for the image\ndescriptors = [\n    "#medieval",\n    "#dungeonsandragons",\n    "#fantasy",\n    "#adventure",\n    "#elf",\n    "#treasure",\n    "#gold",\n    "#coin",\n    "#skulls",\n    "#elf costume",\n    "#trophy room"\n]\n``` ', ' "Embrace your inner warrior and conquer the challenges that lie ahead with courage, strength, and wisdom." ']
+2024-07-08 22:15:35,750 - my_logger - INFO - existing data: None
+2024-07-08 22:17:55,866 - my_logger - ERROR - Failed to add data to yaml file. 
+2024-07-08 22:17:55,867 - my_logger - INFO - successfully generated hashtags and added them to hashtags.yaml
+2024-07-08 22:17:59,245 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:17:59,246 - my_logger - INFO - None
+2024-07-08 22:17:59,253 - my_logger - INFO - Return code: 1
+2024-07-08 22:17:59,253 - my_logger - INFO - stdout: b''
+2024-07-08 22:17:59,253 - my_logger - INFO - stderr: b''
+2024-07-08 22:18:00,286 - my_logger - INFO -  #Medieval #Swordsman #GoldCoins #VaultOfGold #Cloak #EpicAdventure #Hero #Warrior #TreasureHunt #Kingdom 
+2024-07-08 22:18:01,100 - my_logger - INFO -  "Embrace your inner strength and conquer the challenges that lie ahead. Your journey will be filled with gold, but it's your courage and resilience that will truly shine." 
+2024-07-08 22:18:01,101 - my_logger - INFO - [' #Medieval #Swordsman #GoldCoins #VaultOfGold #Cloak #EpicAdventure #Hero #Warrior #TreasureHunt #Kingdom ', ' "Embrace your inner strength and conquer the challenges that lie ahead. Your journey will be filled with gold, but it\'s your courage and resilience that will truly shine." ']
+2024-07-08 22:19:01,174 - my_logger - ERROR - Failed to open yaml file. 
+2024-07-08 22:19:03,236 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:19:03,238 - my_logger - INFO - None
+2024-07-08 22:19:03,245 - my_logger - INFO - Return code: 1
+2024-07-08 22:19:03,245 - my_logger - INFO - stdout: b''
+2024-07-08 22:19:03,245 - my_logger - INFO - stderr: b''
+2024-07-08 22:19:04,782 - my_logger - INFO -  1. #FantasyWorld
+
+2. #MovieSet
+3. #VikingAesthetic
+4. #GoldTreasure
+5. #MedievalMagic
+6. #EpicCosplay
+7. #HeroInCostume
+8. #KingdomOfTheNorth
+9. #AdventureStory
+10. #CinematicVision 
+2024-07-08 22:19:04,783 - my_logger - INFO - [['', '1.', '#FantasyWorld\n\n2.', '#MovieSet\n3.', '#VikingAesthetic\n4.', '#GoldTreasure\n5.', '#MedievalMagic\n6.', '#EpicCosplay\n7.', '#HeroInCostume\n8.', '#KingdomOfTheNorth\n9.', '#AdventureStory\n10.', '#CinematicVision', '']]
+2024-07-08 22:19:29,516 - my_logger - INFO - existing data: None

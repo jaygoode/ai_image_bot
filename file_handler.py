@@ -38,6 +38,10 @@ class FileHandler:
 
     def add_to_yaml_file(self, filepath, data):
         try:
+            breakpoint()
+            if not os.path.exists(filepath):
+                with open(filepath, "w") as yaml_file:
+                    pass
             with open(filepath, "r") as yaml_file:
                 logger.info(f"existing data: {yaml.safe_load(yaml_file)}")
                 existing_data = yaml.safe_load(yaml_file) or {}
@@ -50,7 +54,6 @@ class FileHandler:
 
         try:
             existing_data.update(data)
-
             with open(filepath, "w") as yaml_file:
                 yaml.safe_dump(existing_data, yaml_file)
                 logger.info(f"added data successfully: {existing_data}")
