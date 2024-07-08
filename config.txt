@@ -1,0 +1,12 @@
+{
+    "path_checkpoints": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\models\\checkpoints",
+    "path_loras": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\models\\loras",
+    "path_embeddings": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\models\\embeddings",
+    "path_vae_approx": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\models\\vae_approx",
+    "path_upscale_models": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\models\\upscale_models",
+    "path_inpaint": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\models\\inpaint",
+    "path_controlnet": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\models\\controlnet",
+    "path_clip_vision": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\models\\clip_vision",
+    "path_fooocus_expansion": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\models\\prompt_expansion\\fooocus_expansion",
+    "path_outputs": "C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\repositories\\Fooocus\\outputs"
+}

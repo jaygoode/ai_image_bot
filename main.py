@@ -8,7 +8,7 @@ from datetime import datetime as dt
 import argparse
 from dolphin_handler import AiHandler
 import sys
-from image_bot.fooocus_api import generate_image
+from fooocus_api import generate_image
 
 
 def main():
@@ -17,7 +17,6 @@ def main():
     )
     parser.add_argument(
         "-g",
-        type=str,
         help="Generate images from list of strings in json doc",
         action="store_true",
     )
@@ -67,9 +66,13 @@ def main():
         if args.g:
             # if flag -g is added run code to generate images with Fooocus AI through API
             prompts_file = "./prompts_list.yaml"
+            image_amount = 3
+            negative_prompt = ""
             prompts = file_handler.read_yaml_file(prompts_file)
-            for prompt in prompts:
-                generate_image.generate(prompt)
+            if ai_handler.start_fooocus_model():
+                breakpoint()
+                for prompt in prompts["prompts"]:
+                    generate_image.generate(prompt, negative_prompt, image_amount)
 
         if args.c:
             # with flag -c you can chat with an LLM, currently set to dolpin-mixtral uncensored.
@@ -87,7 +90,6 @@ def main():
                 ]
                 image = "test_image.png"
                 answers = []
-                breakpoint()
                 for question in questions:
                     answers.append(
                         ai_handler.ask_about_image(question, image_folder + image)

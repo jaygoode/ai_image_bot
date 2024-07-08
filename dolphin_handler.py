@@ -10,9 +10,48 @@ class AiHandler:
     def __init__(self, image_folder):
         self.image_folder = image_folder
 
+    def start_fooocus_model(self):
+        try:
+            process = subprocess.Popen(
+                f"python C:\\Users\\johnny\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\main.py",
+                # stdout=subprocess.PIPE,
+                # stderr=subprocess.PIPE,
+                shell=True,
+            )
+            # Wait for the process to fully terminate
+            sleep(5)
+            # stdout, stderr = process.communicate()
+            # stdout = stdout.decode("utf-8")
+            # stderr = stderr.decode("utf-8")
+            # breakpoint()
+
+            # print("Standard Output:", stdout)
+            # print("Standard Error:", stderr)
+            # process.terminate()
+            # stdout, stderr = process.communicate(timeout=15)
+            # logger.info(f"Return code: {process.returncode}")
+            # logger.info(f"Return code: {stdout}")
+            # logger.info(f"Return code: {stderr}")
+            # if process.returncode:
+            #     pass
+            return True
+            return process.returncode
+            # process.terminate()
+            # stdout, stderr = process.communicate(timeout=15)
+            # logger.info(f"Return code: {process.returncode}")
+            # logger.info(f"Return code: {stdout}")
+            # logger.info(f"Return code: {stderr}")
+            # if process.returncode:
+            #     pass
+            # return process.returncode
+        except Exception as e:
+            logger.error(f"An error occurred: {e}")
+            # Kill the program immediately
+            os._exit(1)
+
     def start_model(self, model_name):
         # TODO FIX
-        return True
+        # return True
         try:
             # results = subprocess.run(f"ollama run {model_name}", shell=True)
             process = subprocess.Popen(

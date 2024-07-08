@@ -1,0 +1,52 @@
+2024-07-08 20:52:36,605 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 20:52:36,612 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-07-08 20:52:36,612 - my_logger - ERROR - Failed to open yaml file. [Errno 2] No such file or directory: './prompts_list.yaml'
+2024-07-08 20:52:45,896 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 20:52:45,897 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-07-08 20:52:45,898 - my_logger - INFO - None
+2024-07-08 20:53:30,046 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 20:53:30,048 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-07-08 20:53:30,054 - my_logger - INFO - {'generate an image of a man': None}
+2024-07-08 20:54:02,249 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 20:54:02,250 - my_logger - INFO - {'models_active': [], 'ollama_open': False}
+2024-07-08 20:54:02,256 - my_logger - INFO - {'prompts': 'generate an image of a man'}
+2024-07-08 20:54:49,420 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 20:54:49,421 - my_logger - INFO - None
+2024-07-08 20:54:49,422 - my_logger - INFO - None
+2024-07-08 21:02:09,797 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:02:09,798 - my_logger - INFO - None
+2024-07-08 21:02:09,804 - my_logger - INFO - None
+2024-07-08 21:03:19,134 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:03:19,140 - my_logger - INFO - None
+2024-07-08 21:03:19,142 - my_logger - INFO - None
+2024-07-08 21:04:06,439 - my_logger - ERROR - An error occurred: 
+2024-07-08 21:04:08,860 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:04:08,861 - my_logger - INFO - None
+2024-07-08 21:04:08,862 - my_logger - INFO - None
+2024-07-08 21:06:33,212 - my_logger - ERROR - An error occurred: 
+2024-07-08 21:06:35,160 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:06:35,161 - my_logger - INFO - None
+2024-07-08 21:06:35,162 - my_logger - INFO - None
+2024-07-08 21:07:14,795 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:07:14,796 - my_logger - INFO - None
+2024-07-08 21:07:14,797 - my_logger - INFO - None
+2024-07-08 21:08:45,516 - my_logger - ERROR - An error occurred: 
+2024-07-08 21:08:47,518 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:08:47,520 - my_logger - INFO - None
+2024-07-08 21:08:47,520 - my_logger - INFO - None
+2024-07-08 21:09:12,415 - my_logger - ERROR - An error occurred: 
+2024-07-08 21:09:14,663 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:09:14,665 - my_logger - INFO - None
+2024-07-08 21:09:14,666 - my_logger - INFO - None
+2024-07-08 21:10:53,925 - my_logger - ERROR - An error occurred: 
+2024-07-08 21:10:57,826 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:10:57,827 - my_logger - INFO - None
+2024-07-08 21:10:57,828 - my_logger - INFO - None
+2024-07-08 21:11:30,393 - my_logger - ERROR - An error occurred: 
+2024-07-08 21:45:38,962 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:45:38,963 - my_logger - INFO - None
+2024-07-08 21:45:38,964 - my_logger - INFO - None
+2024-07-08 21:46:03,737 - my_logger - ERROR - An error occurred: name 'stdout' is not defined
+2024-07-08 21:46:20,831 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:46:20,833 - my_logger - INFO - None
+2024-07-08 21:46:20,834 - my_logger - INFO - None
