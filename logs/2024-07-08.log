@@ -50,3 +50,68 @@
 2024-07-08 21:46:20,831 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
 2024-07-08 21:46:20,833 - my_logger - INFO - None
 2024-07-08 21:46:20,834 - my_logger - INFO - None
+2024-07-08 21:46:48,209 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:46:48,211 - my_logger - INFO - None
+2024-07-08 21:46:48,211 - my_logger - INFO - None
+2024-07-08 21:57:02,770 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:57:02,771 - my_logger - INFO - None
+2024-07-08 21:57:19,112 - my_logger - ERROR - An error occurred: 'NoneType' object has no attribute 'write'
+2024-07-08 21:58:26,450 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 21:58:26,452 - my_logger - INFO - None
+2024-07-08 22:00:31,960 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:00:31,961 - my_logger - INFO - None
+2024-07-08 22:00:37,682 - my_logger - INFO - Return code: 1
+2024-07-08 22:00:40,386 - my_logger - INFO - Return code: b' Bye! Have a nice day! \n\n'
+2024-07-08 22:00:46,235 - my_logger - INFO - Return code: b'\x1b[?25l\xe2\xa0\x99 \x1b[?25h\x1b[?25l\x1b[2K\x1b[1G\xe2\xa0\x99 \x1b[?25h\x1b[?25l\x1b[2K\x1b[1G\xe2\xa0\xb8 \x1b[?25h\x1b[?25l\x1b[?25l\x1b[2K\x1b[1G\x1b[?25h\x1b[2K\x1b[1G\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h'
+2024-07-08 22:04:26,732 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:04:26,733 - my_logger - INFO - None
+2024-07-08 22:04:30,000 - my_logger - INFO - Return code: 1
+2024-07-08 22:04:30,360 - my_logger - INFO - stdout: b' Bye! Have a great day! \n\n'
+2024-07-08 22:04:30,819 - my_logger - INFO - stderr: b'\x1b[?25l\xe2\xa0\x99 \x1b[?25h\x1b[?25l\x1b[2K\x1b[1G\xe2\xa0\xb9 \x1b[?25h\x1b[?25l\x1b[?25l\x1b[2K\x1b[1G\x1b[?25h\x1b[2K\x1b[1G\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h\x1b[?25l\x1b[?25h'
+2024-07-08 22:05:05,342 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:05:05,344 - my_logger - INFO - None
+2024-07-08 22:05:10,527 - my_logger - ERROR - An error occurred: 
+2024-07-08 22:05:12,538 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:05:12,539 - my_logger - INFO - None
+2024-07-08 22:05:12,546 - my_logger - INFO - Return code: 1
+2024-07-08 22:05:12,547 - my_logger - INFO - stdout: b''
+2024-07-08 22:05:12,547 - my_logger - INFO - stderr: b''
+2024-07-08 22:05:35,112 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:05:35,113 - my_logger - INFO - None
+2024-07-08 22:05:35,120 - my_logger - INFO - Return code: 1
+2024-07-08 22:05:35,121 - my_logger - INFO - stdout: b''
+2024-07-08 22:05:35,121 - my_logger - INFO - stderr: b''
+2024-07-08 22:07:16,089 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:07:16,090 - my_logger - INFO - None
+2024-07-08 22:07:16,097 - my_logger - INFO - Return code: 1
+2024-07-08 22:07:16,097 - my_logger - INFO - stdout: b''
+2024-07-08 22:07:16,097 - my_logger - INFO - stderr: b''
+2024-07-08 22:08:08,697 - my_logger - INFO - ai state file already exists as filepath: ./state.yaml
+2024-07-08 22:08:08,699 - my_logger - INFO - None
+2024-07-08 22:08:08,705 - my_logger - INFO - Return code: 1
+2024-07-08 22:08:08,705 - my_logger - INFO - stdout: b''
+2024-07-08 22:08:08,706 - my_logger - INFO - stderr: b''
+2024-07-08 22:08:13,911 - my_logger - INFO -  ```python
+
+hashtag_list = [
+    "#FantasyArt",
+    "#MovieMagic",
+    "#CinematicMasterpiece",
+    "#ActorPortrayal",
+    "#EpicAdventure",
+    "#KingdomOfTheNetherlands",
+    "#HeroInCrisis",
+    "#WarriorChief",
+    "#HistoricalSetting",
+    "#FilmArt",
+    "#VikingAge",
+    "#CinematicEpic",
+    "#SetPiece",
+    "#StudioQuality",
+    "#MovieMasterpiece",
+    "#KingdomOfTheNorth"
+]
+``` 
+2024-07-08 22:08:34,474 - my_logger - INFO -  "Embark on your quest with courage and wisdom, just like the character in this image. Embrace challenges, gather strength from your allies, and remember that the journey is as important as the destination." 
+2024-07-08 22:08:34,474 - my_logger - INFO - [' ```python\n\nhashtag_list = [\n    "#FantasyArt",\n    "#MovieMagic",\n    "#CinematicMasterpiece",\n    "#ActorPortrayal",\n    "#EpicAdventure",\n    "#KingdomOfTheNetherlands",\n    "#HeroInCrisis",\n    "#WarriorChief",\n    "#HistoricalSetting",\n    "#FilmArt",\n    "#VikingAge",\n    "#CinematicEpic",\n    "#SetPiece",\n    "#StudioQuality",\n    "#MovieMasterpiece",\n    "#KingdomOfTheNorth"\n]\n``` ', ' "Embark on your quest with courage and wisdom, just like the character in this image. Embrace challenges, gather strength from your allies, and remember that the journey is as important as the destination." ']
+2024-07-08 22:08:34,475 - my_logger - ERROR - Failed to open yaml file. [Errno 2] No such file or directory: './hashtags.yaml'

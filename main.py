@@ -54,7 +54,7 @@ def main():
     date = dt.today().strftime("%Y-%m-%d")
     date = "2024-05-15"
     image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\outputs\\files\\{date}"
-    image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\Fooocus-api\\outputs\\files\\2024-05-15\\"
+    image_folder = f"C:\\Users\\johnny\\Desktop\\repos\\personal_repos\\fooocus\\image_bot\\fooocus_api\\outputs\\files\\2024-05-15\\"
     state_file_filepath = "./state.yaml"
 
     file_handler = FileHandler(image_folder)
@@ -70,15 +70,13 @@ def main():
             negative_prompt = ""
             prompts = file_handler.read_yaml_file(prompts_file)
             if ai_handler.start_fooocus_model():
-                breakpoint()
                 for prompt in prompts["prompts"]:
                     generate_image.generate(prompt, negative_prompt, image_amount)
 
         if args.c:
             # with flag -c you can chat with an LLM, currently set to dolpin-mixtral uncensored.
             if ai_handler.start_model("dolphin-mixtral:latest"):
-                image = "test.png"
-                message = "what do you see in this image?"
+                message = "whats up?"
                 answer = ai_handler.chat(message)
 
         if args.a:
@@ -88,12 +86,11 @@ def main():
                     "generate 10 descriptive words from this image, put them as strings in a python list, all strings starting with a hashtag",
                     "generate a motivating caption based on this image.",
                 ]
-                image = "test_image.png"
+                image = image_folder + "test_image.png"
                 answers = []
                 for question in questions:
-                    answers.append(
-                        ai_handler.ask_about_image(question, image_folder + image)
-                    )
+                    answer = ai_handler.ask_about_image(question, image)
+                    answers.append(answer)
                 logger.info(answers)
                 filepath = "./hashtags.yaml"
                 file_handler.add_to_yaml_file(filepath, answers)

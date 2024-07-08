@@ -56,19 +56,19 @@ class AiHandler:
             # results = subprocess.run(f"ollama run {model_name}", shell=True)
             process = subprocess.Popen(
                 f"ollama run {model_name}",
+                stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 shell=True,
             )
             # Wait for the process to fully terminate
-            sleep(5)
-            breakpoint()
+            # sleep(5)
             process.stdin.write(b"/bye\n")
             process.terminate()
             stdout, stderr = process.communicate(timeout=15)
             logger.info(f"Return code: {process.returncode}")
-            logger.info(f"Return code: {stdout}")
-            logger.info(f"Return code: {stderr}")
+            logger.info(f"stdout: {stdout}")
+            logger.info(f"stderr: {stderr}")
             if process.returncode:
                 pass
             return process.returncode
